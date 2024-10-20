@@ -1,0 +1,108 @@
+create database my_forum;
+use my_forum;
+create table users 
+( 
+Id INT,
+Username VARCHAR(20),
+Email VARCHAR(40),
+Passwords VARCHAR(20),
+Created_at DATETIME
+);
+
+ALTER TABLE users rename COLUMN Id TO User_Id;
+create table posts
+(
+Post_Id int,
+User_Id int,
+Title text,
+Content text,
+Created_at datetime
+);
+create table comments
+(
+Comment_Id int,
+Post_Id int,
+User_Id int,
+Content text,
+Created_at datetime
+);
+
+create table clicks
+(
+Click_Id int,
+User_Id int,
+Points int,
+Last_click datetime
+);
+
+create table media
+(
+media_id int,
+Post_Id int,
+File_path text,
+File_type text
+);
+show tables;
+use my_forum;
+show tables;
+desc users;
+alter table users add constraint user_pk primary key(User_Id);
+desc users;
+desc posts;
+alter table posts add constraint post_pk primary key(Post_Id);
+desc posts;
+desc media;
+alter table media add constraint media_pk primary key(media_Id);
+desc media;
+desc comments;
+alter table comments add constraint comment_pk primary key(Comment_Id);
+desc comments;
+desc clicks;
+alter table clicks add constraint click_pk primary key(Click_Id);
+desc clicks;
+ALTER TABLE posts ADD FOREIGN KEY (User_Id) REFERENCES users(User_Id) ON DELETE CASCADE;
+desc posts;
+ALTER TABLE comments ADD FOREIGN KEY (Post_Id) REFERENCES posts(Post_Id) ON DELETE CASCADE;
+ALTER TABLE comments ADD FOREIGN KEY (User_Id) REFERENCES users(User_Id) ON DELETE CASCADE;
+ALTER TABLE clicks ADD FOREIGN KEY (User_Id) REFERENCES users(User_Id) ON DELETE CASCADE;
+ALTER TABLE media ADD FOREIGN KEY (Post_Id) REFERENCES posts(Post_Id) ON DELETE CASCADE;
+
+
+
+INSERT users( User_Id, Username, Email, Passwords, Created_at) 
+VALUES ( '1',
+ 'Alina',
+ 'pryanic@mail.ru',
+ 'aaallliiinnnaa',
+  NOW());
+  INSERT users( User_Id, Username, Email, Passwords, Created_at) 
+VALUES ( '2',
+ 'Alisa',
+ 'pryanics@mail.ru',
+ 'aaallliiisssaa',
+  NOW());
+  show tables;
+  SELECT * FROM users;
+  
+  INSERT posts( Post_Id, User_Id, Title, Content, Created_at) 
+VALUES ( '1',
+ '1',
+ 'My firts note',
+ 'THis is my first note',
+  NOW());
+  
+ SELECT * FROM posts;
+INSERT comments( Comment_Id, Post_Id, User_Id, Content, Created_at) 
+VALUES ( '1',
+ '1',
+ '1',
+ 'Like',
+  NOW());
+SELECT * FROM comments;
+DELETE FROM users
+WHERE User_Id='1';
+
+SELECT * FROM users;
+SELECT * FROM posts;
+SELECT * FROM comments;
+
