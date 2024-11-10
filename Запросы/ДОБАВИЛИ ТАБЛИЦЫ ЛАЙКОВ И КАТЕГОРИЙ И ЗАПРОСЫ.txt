@@ -1,0 +1,460 @@
+use my_forum;
+
+SELECT * FROM users;
+
+SELECT * FROM clicks;
+
+SELECT * FROM posts;
+
+SELECT * FROM media;
+INSERT media(media_id, Post_Id, File_path, File_type) 
+ VALUES ( '1', '2', 'bebebe', 'photo');
+
+ INSERT media(media_id, Post_Id, File_path, File_type) 
+ VALUES ( '2', '4', 'pelmeni', 'gif');
+ 
+  SELECT * FROM clicks;
+ 
+ INSERT clicks (Click_Id, User_Id, Points, Last_click)
+ VALUES ('1', '1', '9', now());
+ 
+ SELECT * FROM clicks;
+  INSERT clicks (Click_Id, User_Id, Points, Last_click)
+ VALUES ('2', '3', '9', now());
+  INSERT clicks (Click_Id, User_Id, Points, Last_click)
+ VALUES ('3', '1', '3', now());
+ 
+use my_forum;
+show tables;
+SELECT * FROM users;
+INSERT INTO users (User_Id, Username, Email, Passwords, Created_at) VALUES
+(9, 'Ivan', 'ivan@example.com', 'Ivan2021!', NOW()),
+(10, 'Jack', 'jack@example.com', 'Jack2223!', NOW()),
+(11, 'Kate', 'kate@example.com', 'Kate2425!', NOW()),
+(12, 'Leo', 'leo@example.com', 'Leo2627!', NOW()),
+(13, 'Mia', 'mia@example.com', 'Mia2829!', NOW()),
+(14, 'Nina', 'nina@example.com', 'Nina3031!', NOW()),
+(15, 'Oscar', 'oscar@example.com', 'Oscar3233!', NOW()),
+(16, 'Peter', 'peter@example.com', 'Peter3435!', NOW()),
+(17, 'Quinn', 'quinn@example.com', 'Quinn3637!', NOW()),
+(18, 'Rachel', 'rachel@example.com', 'Rachel3839!', NOW()),
+(19, 'Sam', 'sam@example.com', 'Sam4041!', NOW()),
+(20, 'Tina', 'tina@example.com', 'Tina4243!', NOW()),
+(21, 'Uma', 'uma@example.com', 'Uma4445!', NOW()),
+(22, 'Victor', 'victor@example.com', 'Victor4647!', NOW()),
+(23, 'Wendy', 'wendy@example.com', 'Wendy4849!', NOW()),
+(24, 'Xavier', 'xavier@example.com', 'Xavier5051!', NOW()),
+(25, 'Yara', 'yara@example.com', 'Yara5253!', NOW()),
+(26, 'Zack', 'zack@example.com', 'Zack5455!', NOW()),
+(27, 'Amy', 'amy@example.com', 'Amy5657!', NOW()),
+(28, 'Ben', 'ben@example.com', 'Ben5859!', NOW()),
+(29, 'Cara', 'cara@example.com', 'Cara6061!', NOW()),
+(30, 'Dan', 'dan@example.com', 'Dan6263!', NOW());
+SELECT * FROM users;
+SELECT * FROM posts;
+INSERT INTO posts (Post_Id, User_Id, Title, Content, Created_at) VALUES
+(7, 7, 'Pelmeni Nutrition', 'Nutritional value of pelmeni...', NOW()),
+(8, 8, 'Pelmeni Variations', 'Different types of pelmeni...', NOW()),
+(10, 10, 'Pelmeni Storage', 'How to store pelmeni...', NOW()),
+(11, 11, 'Pelmeni Freezing', 'How to freeze pelmeni...', NOW()),
+(12, 12, 'Pelmeni Serving', 'How to serve pelmeni...', NOW()),
+(13, 13, 'Pelmeni Garnishes', 'Best garnishes for pelmeni...', NOW()),
+(14, 14, 'Pelmeni Dough', 'Making the perfect pelmeni dough...', NOW()),
+(15, 15, 'Pelmeni Filling', 'Making the perfect pelmeni filling...', NOW()),
+(16, 16, 'Pelmeni Shaping', 'Shaping pelmeni...', NOW()),
+(17, 17, 'Pelmeni Cooking', 'Cooking pelmeni...', NOW()),
+(18, 18, 'Pelmeni Serving Ideas', 'Ideas for serving pelmeni...', NOW()),
+(19, 19, 'Pelmeni Recipes', 'More pelmeni recipes...', NOW()),
+(20, 20, 'Pelmeni Ingredients', 'Ingredients for pelmeni...', NOW()),
+(21, 21, 'Pelmeni Cooking Time', 'Cooking time for pelmeni...', NOW()),
+(22, 22, 'Pelmeni Cooking Tips', 'More cooking tips for pelmeni...', NOW()),
+(23, 23, 'Pelmeni History', 'More history of pelmeni...', NOW()),
+(24, 24, 'Pelmeni Sauces', 'More sauces for pelmeni...', NOW()),
+(25, 25, 'Pelmeni Nutrition', 'More nutritional value of pelmeni...', NOW()),
+(26, 26, 'Pelmeni Variations', 'More types of pelmeni...', NOW()),
+(27, 27, 'Pelmeni Traditions', 'More traditions around pelmeni...', NOW()),
+(28, 28, 'Pelmeni Storage', 'More ways to store pelmeni...', NOW()),
+(29, 29, 'Pelmeni Freezing', 'More ways to freeze pelmeni...', NOW()),
+(30, 30, 'Pelmeni Serving', 'More ways to serve pelmeni...', NOW());
+ SELECT * FROM posts;
+  SELECT * FROM comments;
+ INSERT INTO comments (Comment_Id, Post_Id, User_Id, Content, Created_at) VALUES
+(8, 3, 9, 'I will try these!', NOW()),
+(9, 3, 10, 'Thanks for sharing!', NOW()),
+(10, 4, 11, 'Very useful tips!', NOW()),
+(11, 4, 12, 'I will use these tips!', NOW()),
+(12, 4, 13, 'Thanks for sharing!', NOW()),
+(13, 5, 14, 'Interesting history!', NOW()),
+(14, 5, 15, 'I learned a lot!', NOW()),
+(15, 5, 16, 'Thanks for sharing!', NOW()),
+(16, 6, 17, 'Great sauces!', NOW()),
+(17, 6, 18, 'I will try these!', NOW()),
+(18, 6, 19, 'Thanks for sharing!', NOW()),
+(19, 7, 20, 'Very informative!', NOW()),
+(20, 7, 21, 'I learned a lot!', NOW()),
+(21, 7, 22, 'Thanks for sharing!', NOW()),
+(22, 8, 23, 'Great variations!', NOW()),
+(23, 8, 24, 'I will try these!', NOW()),
+(24, 8, 25, 'Thanks for sharing!', NOW()),
+(25, 9, 26, 'Interesting traditions!', NOW()),
+(26, 9, 27, 'I learned a lot!', NOW()),
+(27, 9, 28, 'Thanks for sharing!', NOW()),
+(28, 10, 29, 'Very useful tips!', NOW()),
+(29, 10, 30, 'I will use these tips!', NOW()),
+(30, 10, 1, 'Thanks for sharing!', NOW());
+
+SELECT * FROM comments;
+SELECT * FROM clicks;
+INSERT INTO clicks (Click_Id, User_Id, Points, Last_click) VALUES
+(4, 4, 25, NOW()),
+(5, 5, 30, NOW()),
+(6, 6, 35, NOW()),
+(7, 7, 40, NOW()),
+(8, 8, 45, NOW()),
+(9, 9, 50, NOW()),
+(10, 10, 55, NOW()),
+(11, 11, 60, NOW()),
+(12, 12, 65, NOW()),
+(13, 13, 70, NOW()),
+(14, 14, 75, NOW()),
+(15, 15, 80, NOW()),
+(16, 16, 85, NOW()),
+(17, 17, 90, NOW()),
+(18, 18, 95, NOW()),
+(19, 19, 100, NOW()),
+(20, 20, 105, NOW()),
+(21, 21, 110, NOW()),
+(22, 22, 115, NOW()),
+(23, 23, 120, NOW()),
+(24, 24, 125, NOW()),
+(25, 25, 130, NOW()),
+(26, 26, 135, NOW()),
+(27, 27, 140, NOW()),
+(28, 28, 145, NOW()),
+(29, 29, 150, NOW()),
+(30, 30, 155, NOW());
+SELECT * FROM media;
+INSERT INTO media (media_id, Post_Id, File_path, File_type) VALUES
+(1, 1, '/images/pelmeni1.jpg', 'image/jpeg'),
+(3, 3, '/images/pelmeni3.jpg', 'image/jpeg'),
+(4, 4, '/images/pelmeni4.jpg', 'image/jpeg'),
+(5, 5, '/images/pelmeni5.jpg', 'image/jpeg'),
+(6, 6, '/images/pelmeni6.jpg', 'image/jpeg'),
+(7, 7, '/images/pelmeni7.jpg', 'image/jpeg'),
+(8, 8, '/images/pelmeni8.jpg', 'image/jpeg'),
+(9, 9, '/images/pelmeni9.jpg', 'image/jpeg'),
+(10, 10, '/images/pelmeni10.jpg', 'image/jpeg'),
+(11, 11, '/images/pelmeni11.jpg', 'image/jpeg'),
+(12, 12, '/images/pelmeni12.jpg', 'image/jpeg'),
+(13, 13, '/images/pelmeni13.jpg', 'image/jpeg'),
+(14, 14, '/images/pelmeni14.jpg', 'image/jpeg'),
+(15, 15, '/images/pelmeni15.jpg', 'image/jpeg'),
+(16, 16, '/images/pelmeni16.jpg', 'image/jpeg'),
+(17, 17, '/images/pelmeni17.jpg', 'image/jpeg'),
+(18, 18, '/images/pelmeni18.jpg', 'image/jpeg'),
+(19, 19, '/images/pelmeni19.jpg', 'image/jpeg'),
+(20, 20, '/images/pelmeni20.jpg', 'image/jpeg'),
+(21, 21, '/images/pelmeni21.jpg', 'image/jpeg'),
+(22, 22, '/images/pelmeni22.jpg', 'image/jpeg'),
+(23, 23, '/images/pelmeni23.jpg', 'image/jpeg'),
+(24, 24, '/images/pelmeni24.jpg', 'image/jpeg'),
+(25, 25, '/images/pelmeni25.jpg', 'image/jpeg'),
+(26, 26, '/images/pelmeni26.jpg', 'image/jpeg'),
+(27, 27, '/images/pelmeni27.jpg', 'image/jpeg'),
+(28, 28, '/images/pelmeni28.jpg', 'image/jpeg'),
+(29, 29, '/images/pelmeni29.jpg', 'image/jpeg'),
+(30, 30, '/images/pelmeni30.jpg', 'image/jpeg');
+
+SELECT * FROM media;
+CREATE TABLE post_categories (
+    Post_Id INT,
+    Category_Id INT,
+    PRIMARY KEY (Post_Id, Category_Id),
+    FOREIGN KEY (Post_Id) REFERENCES posts(Post_Id),
+    FOREIGN KEY (Category_Id) REFERENCES categories(Category_Id)
+    
+);
+
+INSERT INTO categories (Category_Id, Name, Description) VALUES
+(1, 'Рецепты', 'Различные рецепты пельменей'),
+(2, 'Советы по приготовлению', 'Советы по приготовлению пельменей'),
+(3, 'История', 'История пельменей'),
+(4, 'Соусы', 'Лучшие соусы для пельменей'),
+(5, 'Питательная ценность', 'Питательная ценность пельменей'),
+(6, 'Виды пельменей', 'Разные виды пельменей'),
+(7, 'Традиции', 'Традиции, связанные с пельменями'),
+(8, 'Хранение', 'Как хранить пельменей'),
+(9, 'Заморозка', 'Как замораживать пельменей'),
+(10, 'Подача', 'Как подавать пельменей'),
+(11, 'Гарниры', 'Лучшие гарниры для пельменей'),
+(12, 'Тесто', 'Как приготовить идеальное тесто для пельменей'),
+(13, 'Начинка', 'Как приготовить идеальную начинку для пельменей'),
+(14, 'Формовка', 'Как формовать пельменей'),
+(15, 'Приготовление', 'Как готовить пельменей'),
+(16, 'Идеи для подачи', 'Идеи для подачи пельменей'),
+(17, 'Ингредиенты', 'Ингредиенты для пельменей'),
+(18, 'Время приготовления', 'Время приготовления пельменей'),
+(19, 'Дополнительные советы', 'Дополнительные советы по приготовлению пельменей'),
+(20, 'Дополнительная история', 'Дополнительная информация об истории пельменей'),
+(21, 'Дополнительные соусы', 'Дополнительные соусы для пельменей'),
+(22, 'Дополнительная питательная ценность', 'Дополнительная информация о питательной ценности пельменей'),
+(23, 'Дополнительные виды пельменей', 'Дополнительные виды пельменей'),
+(24, 'Дополнительные традиции', 'Дополнительные традиции, связанные с пельменями'),
+(25, 'Дополнительные способы хранения', 'Дополнительные способы хранения пельменей'),
+(26, 'Дополнительные способы заморозки', 'Дополнительные способы заморозки пельменей'),
+(27, 'Дополнительные способы подачи', 'Дополнительные способы подачи пельменей'),
+(28, 'Дополнительные гарниры', 'Дополнительные гарниры для пельменей'),
+(29, 'Дополнительные советы по тесту', 'Дополнительные советы по приготовлению теста для пельменей'),
+(30, 'Дополнительные советы по начинке', 'Дополнительные советы по приготовлению начинки для пельменей');
+
+INSERT INTO post_categories (Post_Id, Category_Id) VALUES
+(1, 1), -- Пост 1 принадлежит к категории 1 (Рецепты)
+(2, 2), -- Пост 2 принадлежит к категории 2 (Советы по приготовлению)
+(3, 1), -- Пост 3 принадлежит к категории 1 (Рецепты)
+(4, 2), -- Пост 4 принадлежит к категории 2 (Советы по приготовлению)
+(5, 3), -- Пост 5 принадлежит к категории 3 (История)
+(6, 4), -- Пост 6 принадлежит к категории 4 (Соусы)
+(7, 5), -- Пост 7 принадлежит к категории 5 (Питательная ценность)
+(8, 6), -- Пост 8 принадлежит к категории 6 (Виды пельменей)
+(9, 7), -- Пост 9 принадлежит к категории 7 (Традиции)
+(10, 8), -- Пост 10 принадлежит к категории 8 (Хранение)
+(11, 9), -- Пост 11 принадлежит к категории 9 (Заморозка)
+(12, 10), -- Пост 12 принадлежит к категории 10 (Подача)
+(13, 11), -- Пост 13 принадлежит к категории 11 (Гарниры)
+(14, 12), -- Пост 14 принадлежит к категории 12 (Тесто)
+(15, 13), -- Пост 15 принадлежит к категории 13 (Начинка)
+(16, 14), -- Пост 16 принадлежит к категории 14 (Формовка)
+(17, 15), -- Пост 17 принадлежит к категории 15 (Приготовление)
+(18, 16), -- Пост 18 принадлежит к категории 16 (Идеи для подачи)
+(19, 1), -- Пост 19 принадлежит к категории 1 (Рецепты)
+(20, 17), -- Пост 20 принадлежит к категории 17 (Ингредиенты)
+(21, 18), -- Пост 21 принадлежит к категории 18 (Время приготовления)
+(22, 2), -- Пост 22 принадлежит к категории 2 (Советы по приготовлению)
+(23, 3), -- Пост 23 принадлежит к категории 3 (История)
+(24, 4), -- Пост 24 принадлежит к категории 4 (Соусы)
+(25, 5), -- Пост 25 принадлежит к категории 5 (Питательная ценность)
+(26, 6), -- Пост 26 принадлежит к категории 6 (Виды пельменей)
+(27, 7), -- Пост 27 принадлежит к категории 7 (Традиции)
+(28, 8), -- Пост 28 принадлежит к категории 8 (Хранение)
+(29, 9), -- Пост 29 принадлежит к категории 9 (Заморозка)
+(30, 10); -- Пост 30 принадлежит к категории 10 (Подача)
+
+ALTER TABLE likes DROP FOREIGN KEY likes_ibfk_3;
+ALTER TABLE likes DROP COLUMN Comment_Id;
+
+SELECT * FROM likes;
+INSERT INTO likes (Like_Id, User_Id, Post_Id, Created_at) VALUES
+(1, 1, 1, NOW()),
+(2, 2, 1, NOW()),
+(3, 3, 1, NOW()),
+(4, 4, 2, NOW()),
+(5, 5, 2, NOW()),
+(6, 6, 2, NOW()),
+(7, 7, 3, NOW()),
+(8, 8, 3, NOW()),
+(9, 9, 3, NOW()),
+(10, 10, 4, NOW()),
+(11, 11, 4, NOW()),
+(12, 12, 4, NOW()),
+(13, 13, 5, NOW()),
+(14, 14, 5, NOW()),
+(15, 15, 5, NOW()),
+(16, 16, 6, NOW()),
+(17, 17, 6, NOW()),
+(18, 18, 6, NOW()),
+(19, 19, 7, NOW()),
+(20, 20, 7, NOW()),
+(21, 21, 7, NOW()),
+(22, 22, 8, NOW()),
+(23, 23, 8, NOW()),
+(24, 24, 8, NOW()),
+(25, 25, 9, NOW()),
+(26, 26, 9, NOW()),
+(27, 27, 9, NOW()),
+(28, 28, 10, NOW()),
+(29, 29, 10, NOW()),
+(30, 30, 10, NOW()),
+(31, 1, 11, NOW()),
+(32, 2, 11, NOW()),
+(33, 3, 11, NOW()),
+(34, 4, 12, NOW()),
+(35, 5, 12, NOW()),
+(36, 6, 12, NOW()),
+(37, 7, 13, NOW()),
+(38, 8, 13, NOW()),
+(39, 9, 13, NOW()),
+(40, 10, 14, NOW()),
+(41, 11, 14, NOW()),
+(42, 12, 14, NOW()),
+(43, 13, 15, NOW()),
+(44, 14, 15, NOW()),
+(45, 15, 15, NOW()),
+(46, 16, 16, NOW()),
+(47, 17, 16, NOW()),
+(48, 18, 16, NOW()),
+(49, 19, 17, NOW()),
+(50, 20, 17, NOW()),
+(51, 21, 17, NOW()),
+(52, 22, 18, NOW()),
+(53, 23, 18, NOW()),
+(54, 24, 18, NOW()),
+(55, 25, 19, NOW()),
+(56, 26, 19, NOW()),
+(57, 27, 19, NOW()),
+(58, 28, 20, NOW()),
+(59, 29, 20, NOW()),
+(60, 30, 20, NOW()),
+(61, 1, 21, NOW()),
+(62, 2, 21, NOW()),
+(63, 3, 21, NOW()),
+(64, 4, 22, NOW()),
+(65, 5, 22, NOW()),
+(66, 6, 22, NOW()),
+(67, 7, 23, NOW()),
+(68, 8, 23, NOW()),
+(69, 9, 23, NOW()),
+(70, 10, 24, NOW()),
+(71, 11, 24, NOW()),
+(72, 12, 24, NOW()),
+(73, 13, 25, NOW()),
+(74, 14, 25, NOW()),
+(75, 15, 25, NOW()),
+(76, 16, 26, NOW()),
+(77, 17, 26, NOW()),
+(78, 18, 26, NOW()),
+(79, 19, 27, NOW()),
+(80, 20, 27, NOW()),
+(81, 21, 27, NOW()),
+(82, 22, 28, NOW()),
+(83, 23, 28, NOW()),
+(84, 24, 28, NOW()),
+(85, 25, 29, NOW()),
+(86, 26, 29, NOW()),
+(87, 27, 29, NOW());
+
+SELECT * FROM likes;
+
+
+-- 1. Получение постов с наибольшим количеством лайков 
+-- Этот запрос выберет посты, которые получили наибольшее количество лайков, 
+-- и отсортирует их по убыванию количества лайков.
+SELECT p.Post_Id, p.Title, COUNT(l.Like_Id) AS LikeCount
+FROM posts p
+JOIN likes l ON p.Post_Id = l.Post_Id
+GROUP BY p.Post_Id, p.Title
+ORDER BY LikeCount DESC;
+
+-- 2. Получение пользователей, которые написали наибольшее количество комментариев
+-- Этот запрос выберет пользователей, которые написали наибольшее количество комментариев,
+-- и отсортирует их по убыванию количества комментариев.
+SELECT u.User_Id, u.Username, COUNT(c.Comment_Id) AS CommentCount
+FROM users u
+JOIN comments c ON u.User_Id = c.User_Id
+GROUP BY u.User_Id, u.Username
+ORDER BY CommentCount DESC;
+
+-- 3. Получение постов с их категориями и количеством лайков
+-- Этот запрос выберет посты вместе с их категориями и количеством лайков.
+
+SELECT p.Post_Id, p.Title, c.Name AS Category, COUNT(l.Like_Id) AS LikeCount
+FROM posts p
+JOIN post_categories pc ON p.Post_Id = pc.Post_Id
+JOIN categories c ON pc.Category_Id = c.Category_Id
+LEFT JOIN likes l ON p.Post_Id = l.Post_Id
+GROUP BY p.Post_Id, p.Title, c.Name
+ORDER BY LikeCount DESC;
+
+-- 4. Получение пользователей, которые накликали больше всех
+-- Этот запрос выберет пользователей, которые накликали больше всех,
+--  и отсортирует их по убыванию количества очков.
+
+
+
+SELECT u.User_Id, u.Username, SUM(cl.Points) AS TotalPoints
+FROM users u
+JOIN clicks cl ON u.User_Id = cl.User_Id
+GROUP BY u.User_Id, u.Username
+ORDER BY TotalPoints DESC;
+
+-- 5. Получение постов, которые не получили ни одного лайка
+-- Этот запрос выберет посты, которые не получили ни одного лайка.
+
+SELECT p.Post_Id, p.Title
+FROM posts p
+LEFT JOIN likes l ON p.Post_Id = l.Post_Id
+WHERE l.Like_Id IS NULL;
+
+-- 6. Получение постов с их комментариями и количеством лайков
+-- Этот запрос выберет посты вместе с их комментариями и количеством лайков.
+
+SELECT p.Post_Id, p.Title, c.Content AS Comment, COUNT(l.Like_Id) AS LikeCount
+FROM posts p
+LEFT JOIN comments c ON p.Post_Id = c.Post_Id
+LEFT JOIN likes l ON p.Post_Id = l.Post_Id
+GROUP BY p.Post_Id, p.Title, c.Content
+ORDER BY LikeCount DESC;
+
+-- 7. Получение пользователей, которые написали комментарии к постам в определенной категории
+-- Этот запрос выберет пользователей, которые написали комментарии к постам в определенной категории.
+
+
+SELECT u.User_Id, u.Username, COUNT(c.Comment_Id) AS CommentCount
+FROM users u
+JOIN comments c ON u.User_Id = c.User_Id
+JOIN posts p ON c.Post_Id = p.Post_Id
+JOIN post_categories pc ON p.Post_Id = pc.Post_Id
+JOIN categories cat ON pc.Category_Id = cat.Category_Id
+WHERE cat.Name = 'Рецепты'
+GROUP BY u.User_Id, u.Username
+ORDER BY CommentCount DESC;
+
+-- 8. Среднее количество лайков на пост в определенной категории
+-- Этот запрос вычисляет среднее количество лайков на пост в определенной категории.
+
+
+SELECT AVG(LikeCount) AS AverageLikesPerPostInCategory
+FROM (
+    SELECT p.Post_Id, COUNT(l.Like_Id) AS LikeCount
+    FROM posts p
+    JOIN post_categories pc ON p.Post_Id = pc.Post_Id
+    JOIN categories c ON pc.Category_Id = c.Category_Id
+    LEFT JOIN likes l ON p.Post_Id = l.Post_Id
+    WHERE c.Name = 'Формовка'
+    GROUP BY p.Post_Id
+) AS CategoryPostLikes;
+
+-- 9. Среднее количество кликов на пользователя за последние 30 дней
+-- Этот запрос вычисляет среднее количество кликов, которые пользователи сделали за последние 30 дней.
+
+
+SELECT AVG(TotalPoints) AS AveragePointsPerUserLast30Days
+FROM (
+    SELECT u.User_Id, SUM(cl.Points) AS TotalPoints
+    FROM users u
+    LEFT JOIN clicks cl ON u.User_Id = cl.User_Id
+    WHERE cl.Last_click >= DATE_SUB(NOW(), INTERVAL 30 DAY)
+    GROUP BY u.User_Id
+) AS UserPointsLast30Days;
+
+
+-- 10. Получение пользователей, которые написали комментарии к постам, созданным определенным пользователем
+-- Этот запрос выберет пользователей, которые написали комментарии к постам, созданным определенным пользователем.
+
+SELECT u.User_Id, u.Username, COUNT(c.Comment_Id) AS CommentCount
+FROM users u
+JOIN comments c ON u.User_Id = c.User_Id
+JOIN posts p ON c.Post_Id = p.Post_Id
+WHERE p.User_Id = 1 
+GROUP BY u.User_Id, u.Username
+ORDER BY CommentCount DESC;
+
+-- 11 Получение пользователей, которые написали комментарии к постам, созданным в определенный день
+-- Этот запрос выберет пользователей, которые написали комментарии к постам, созданным в определенный день.
+
+SELECT u.User_Id, u.Username, COUNT(c.Comment_Id) AS CommentCount
+FROM users u
+JOIN comments c ON u.User_Id = c.User_Id
+JOIN posts p ON c.Post_Id = p.Post_Id
+WHERE DATE(p.Created_at) = '2024-11-10' 
+GROUP BY u.User_Id, u.Username
+ORDER BY CommentCount DESC;
