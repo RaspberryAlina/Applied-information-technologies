@@ -1,0 +1,28 @@
+DELIMITER |
+
+CREATE PROCEDURE GetUserById(
+    IN p_User_Id INT
+)
+BEGIN
+    SELECT * FROM users WHERE User_Id = p_User_Id;
+END 
+|
+DELIMITER ;
+
+CALL GetUserById(1);
+
+
+DELIMITER |
+
+CREATE PROCEDURE DeleteInactiveUsers()
+BEGIN
+    DELETE FROM users
+    WHERE User_Id NOT IN (
+        SELECT DISTINCT User_Id
+        FROM clicks
+        WHERE Last_click >= DATE_SUB(NOW(), INTERVAL 5 YEAR)
+    );
+END 
+|
+DELIMITER ;
+CALL DeleteInactiveUsers();

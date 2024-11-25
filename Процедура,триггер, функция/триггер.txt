@@ -1,0 +1,23 @@
+use my_forum;
+
+CREATE TABLE IF NOT EXISTS user_actions (
+    Action_Id INT AUTO_INCREMENT PRIMARY KEY,
+    User_Id INT,
+    Action_Type VARCHAR(50),
+    Action_Time DATETIME
+);
+
+DELIMITER |
+CREATE TRIGGER after_user_delete_log
+AFTER DELETE ON users
+FOR EACH ROW
+BEGIN
+    INSERT INTO user_actions (User_Id, Action_Type, Action_Time)
+    VALUES (OLD.User_Id, 'DELETE_USER', NOW());
+END;
+|
+DELIMITER ;
+SHOW TRIGGERS;
+
+DELETE FROM users WHERE User_Id = 29;
+select * from user_actions;

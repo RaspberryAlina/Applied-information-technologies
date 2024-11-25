@@ -1,0 +1,43 @@
+DELIMITER //
+
+CREATE FUNCTION IsUserActive1(userId INT) RETURNS BOOLEAN
+READS SQL DATA
+BEGIN
+    DECLARE isActive BOOLEAN DEFAULT FALSE;
+
+    -- Проверка активности в таблице comments
+    IF EXISTS (
+        SELECT 1
+        FROM comments
+        WHERE User_Id = userId
+          AND Created_at >= DATE_SUB(NOW(), INTERVAL 30 DAY)
+    ) THEN
+        SET isActive = TRUE;
+    ELSE
+        -- Проверка активности в таблице likes
+        IF EXISTS (
+            SELECT 1
+            FROM likes
+            WHERE User_Id = userId
+              AND Created_at >= DATE_SUB(NOW(), INTERVAL 30 DAY)
+        ) THEN
+            SET isActive = TRUE;
+        ELSE
+            -- Проверка активности в таблице clicks
+            IF EXISTS (
+                SELECT 1
+                FROM clicks
+                WHERE User_Id = userId
+                  AND Last_click >= DATE_SUB(NOW(), INTERVAL 30 DAY)
+            ) THEN
+                SET isActive = TRUE;
+            END IF;
+        END IF;
+    END IF;
+
+    RETURN isActive;
+END //
+
+DELIMITER ;
+
+SELECT IsUserActive1(1) AS IsActive;
