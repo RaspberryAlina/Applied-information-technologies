@@ -1,28 +1,27 @@
-DELIMITER |
+DELIMITER //
 
-CREATE PROCEDURE GetUserById(
-    IN p_User_Id INT
-)
+CREATE PROCEDURE AnalyzeUserActivity()
 BEGIN
-    SELECT * FROM users WHERE User_Id = p_User_Id;
-END 
-|
+    SELECT
+        u.User_Id,
+        u.Username,
+        COUNT(p.Post_Id) AS PostCount,
+        COUNT(c.Comment_Id) AS CommentCount,
+        SUM(cl.Points) AS TotalPoints
+    FROM
+        users u
+    LEFT JOIN
+        posts p ON u.User_Id = p.User_Id AND p.Created_at >= DATE_SUB(NOW(), INTERVAL 30 DAY)
+    LEFT JOIN
+        comments c ON u.User_Id = c.User_Id AND c.Created_at >= DATE_SUB(NOW(), INTERVAL 30 DAY)
+    LEFT JOIN
+        clicks cl ON u.User_Id = cl.User_Id AND cl.Last_click >= DATE_SUB(NOW(), INTERVAL 30 DAY)
+    GROUP BY
+        u.User_Id, u.Username
+    ORDER BY
+        TotalPoints DESC;
+END //
+
 DELIMITER ;
 
-CALL GetUserById(1);
-
-
-DELIMITER |
-
-CREATE PROCEDURE DeleteInactiveUsers()
-BEGIN
-    DELETE FROM users
-    WHERE User_Id NOT IN (
-        SELECT DISTINCT User_Id
-        FROM clicks
-        WHERE Last_click >= DATE_SUB(NOW(), INTERVAL 5 YEAR)
-    );
-END 
-|
-DELIMITER ;
-CALL DeleteInactiveUsers();
+CALL AnalyzeUserActivity();
